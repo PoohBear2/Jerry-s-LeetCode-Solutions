@@ -1,0 +1,21 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+
+        last = digits[len(digits) - 1]
+        if last == 9:
+            ind = len(digits) - 2
+            digits[len(digits) - 1] = 0
+            while digits[ind] == 9 and ind >= 0:
+                digits[ind] = 0
+                ind = ind - 1
+            if ind == -1:
+                digits.insert(0, 1)
+            else:
+                digits[ind] = digits[ind] + 1
+            return digits
+        else:
+            digits[len(digits) - 1] = digits[len(digits) - 1] + 1
+            return digits
+        
+
+        
