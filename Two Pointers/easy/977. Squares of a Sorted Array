@@ -1,0 +1,20 @@
+class Solution(object):
+    def sortedSquares(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+
+        l = []
+        p1 = 0
+        p2 = len(nums) - 1
+        while p1 <= p2:
+            c1 = abs(nums[p1])
+            c2 = abs(nums[p2])
+            if c2 > c1:
+                l.insert(0, int(math.pow(c2, 2)))
+                p2 -= 1
+            else:
+                l.insert(0, int(math.pow(c1, 2)))
+                p1 += 1
+        return l
