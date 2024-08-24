@@ -1,0 +1,21 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) != len(t):
+            return False
+        sA = []
+        tA = []
+        for i in s:
+            sA.append(i)
+        for j in t:
+            tA.append(j)
+        sA.sort()
+        tA.sort()
+        if sA == tA:
+            return True
+        else:
+            return False
