@@ -1,0 +1,21 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        if x < 0:
+            return False
+        else:
+            l = []
+            a = x
+            while a > 0:
+                last = a % 10
+                a = a / 10
+                l.append(last)
+            for i in range(0, len(l)):
+                a = int(a + math.pow(10, len(l) - 1 - i)*l[i])
+            if a == x:
+                return True
+            else:
+                return False
