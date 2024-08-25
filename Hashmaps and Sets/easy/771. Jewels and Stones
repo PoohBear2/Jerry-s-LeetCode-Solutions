@@ -1,0 +1,15 @@
+class Solution(object):
+    def numJewelsInStones(self, jewels, stones):
+        """
+        :type jewels: str
+        :type stones: str
+        :rtype: int
+        """
+        r = set()
+        res = 0
+        for i in jewels:
+            r.add(i)
+        for j in stones:
+            if j in r:
+                res += 1
+        return res
