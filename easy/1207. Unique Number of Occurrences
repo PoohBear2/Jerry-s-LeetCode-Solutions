@@ -1,0 +1,17 @@
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        d = {}
+        for x in arr:
+            if x not in d:
+                d[x] = 1
+            else:
+                d[x] += 1
+        
+        d2 = set()
+        for x in d.values():
+            if x not in d2:
+                d2.add(x)
+            else:
+                return False
+        
+        return True
